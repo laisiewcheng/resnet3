@@ -134,6 +134,7 @@ if args.resume:
 else:
     print('| Building net type [' + args.net_type + ']...')
     net, file_name = getNetwork(args)
+    print('Model: ', file_name)
     net.apply(conv_init)
 
 if use_cuda:
