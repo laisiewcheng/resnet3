@@ -95,6 +95,7 @@ if (args.testOnly):
 
     if use_cuda:
         net.cuda()
+        print('Lets use ', torch.cuda.device_count(), ' GPUs')
         net = torch.nn.DataParallel(net, device_ids=range(torch.cuda.device_count()))
         cudnn.benchmark = True
 
